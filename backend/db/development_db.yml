@@ -1,0 +1,47 @@
+version: '3.1'
+
+services:
+  mvst-coffee-challange-database:
+    container_name: mvst-coffee-challenge-database
+    image: postgres
+    ports:
+      - '5432:5432'
+    environment:
+      POSTGRES_DB: 'mvst-coffee-challenge-db'
+      POSTGRES_PASSWORD: '1234'
+      POSTGRES_USER: 'postgres'    
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U postgres']
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      default:
+        aliases:
+          - postgres.service
+
+
+  pgadmin:
+    container_name: pgadmin
+    image: dpage/pgadmin4
+    restart: always
+    ports:
+      - "8080:80" 
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@admin.com
+      PGADMIN_DEFAULT_PASSWORD: admin
+      PGADMIN_CONFIG_SERVER_MODE: 'False'
+    depends_on:
+      - mvst-coffee-challange-database
+    volumes:
+      - ./servers.json:/pgadmin4/servers.json
+      - ./pgpass:/pgpass
+    networks:
+      default:
+        aliases:
+          - pgadmin.service
+
+networks:
+  default:
+    name: mvst-network
+    

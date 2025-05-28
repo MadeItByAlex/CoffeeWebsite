@@ -1,0 +1,14 @@
+{
+  "Servers": {
+    "CoffeeDB": {
+      "Name": "CoffeeDB",
+      "Group": "Servers",
+      "Host": "mvst-coffee-challenge-database",
+      "Port": 5432,
+      "MaintenanceDB": "mvst-coffee-challenge-db",
+      "Username": "postgres",
+      "SSLMode": "prefer",
+      "PassFile": "/pgpass"
+    }
+  }
+}

@@ -111,9 +111,5 @@ Once all services are running:
 
 ---
 
-That's it! You should now have the entire application stack running locally. Happy coding! 🎉
+That's it! You should now have the entire application stack running locally. 🎉
 
-
-Thanks and have a great challenge! 🔥
-
-MVST Team

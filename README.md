@@ -1,4 +1,4 @@
-## How to set up ?
+# How to set up ?
 Hey there! 👋 Welcome to the setup guide for getting our awesome web application up and running on your local machine. Follow these steps, and you'll be ready to explore in no time! ✨
 
 ---
